@@ -20,23 +20,8 @@ async function main() {
     app.use('/personagem', personagemRouter)
 
     /*
-
     // Endpoint Create [Post]
-    app.post('/personagem', async function (req, res) {
-        const novoItem = req.body
-
-        
-        if (!novoItem || !novoItem.nome) {
-            return res.status(400).send('Corpo da requisição deve conter a propriedade `nome`.')
-        }
-
-        // if (lista.includes(novoItem)) {
-        //     return res.status(409).send('Esse item já existe na lista.')
-        // }
-
-        await collection.insertOne(novoItem)
-
-        res.status(201).send(novoItem)
+    app.post('/personagem', async function (req, res) {        
     })
 
 
