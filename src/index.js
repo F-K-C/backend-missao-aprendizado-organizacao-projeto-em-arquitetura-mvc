@@ -20,12 +20,6 @@ async function main() {
     app.use('/personagem', personagemRouter)
 
     /*
-    // Endpoint Readl all (GET) /personagem
-    app.get('/personagem', async function (req, res) {
-        const itens = await collection.find().toArray()
-        res.send(itens)
-    })
-
     //EndPoint Read By ID
     app.get('/personagem/:id', async function (req, res) {
         const id = req.params.id
