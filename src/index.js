@@ -20,17 +20,6 @@ async function main() {
     app.use('/personagem', personagemRouter)
 
     /*
-    //EndPoint Read By ID
-    app.get('/personagem/:id', async function (req, res) {
-        const id = req.params.id
-        const item = await collection.findOne({ _id: new ObjectId(id) })
-
-        if (!item) {
-            return res.status(404).send('Item não encontrado.')
-        }
-
-        res.send(item)
-    })
 
     // Endpoint Create [Post]
     app.post('/personagem', async function (req, res) {
