@@ -19,24 +19,6 @@ async function main() {
 
     app.use('/personagem', personagemRouter)
 
-    /*
-    // Endpoint Create [Post]
-    app.post('/personagem', async function (req, res) {        
-    })
-
-
-    app.delete('/personagem/:id', async function (req, res) {
-        const id = req.params.id
-
-        // if (!lista[id - 1]) {
-        //     return res.status(404).send('Item não encontrado.')
-        // }
-
-        await collection.deleteOne({ _id: new ObjectId(id) })
-
-        res.send('Item removido com sucesso: ' + id)
-    })
-    */
     app.listen(3000, function(){
         console.log("Servidor rodando em http://localhost:3000")
     })

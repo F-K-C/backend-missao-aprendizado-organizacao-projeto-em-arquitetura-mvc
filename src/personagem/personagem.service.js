@@ -27,13 +27,18 @@ function create(newItem) {
 *@returns
 */
 function updateById(id, newItem) {
-    return getCollection().updateOne (
+    return getCollection().updateOne(
         { _id: new ObjectId(id) },
         { $set: newItem }
     )
 }
 
-function deleteById() {
+/**
+*@param {string} id
+*@returns
+*/
+function deleteById(id) {
+    return getCollection().deleteOne( { _id: new ObjectId(id) } )
 }
 
 module.exports = {
