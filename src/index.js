@@ -1,27 +1,22 @@
 require('dotenv').config()
 const express = require('express')
-const { MongoClient, ObjectId } = require('mongodb')
-
-const dbUrl = process.env.DATABASE_URL
-const dbName = 'mongodb-arquitetura-mvc'
+const { connectToDatabase } = require('./db/database-connection')
+//const { MongoClient, ObjectId } = require('mongodb')
 
 async function main() {
-    const client = new MongoClient(dbUrl)
-    console.log('Conectando ao banco de dados....')
-    await client.connect()
-    console.log('Banco de dados conectado com sucesso!')
 
-    const db = client.db(dbName)
-    const collection = db.collection('personagem')
+    await connectToDatabase()
 
+
+    // const collection = db.collection('personagem')
     const app = express()
+    app.use(express.json())
 
     app.get('/', function (req, res) {
         res.send('Hello World')
     })
 
-    const lista = ['Java', 'Kotlin', 'Android']
-
+    /*
     // Endpoint Readl all (GET) /personagem
     app.get('/personagem', async function (req, res) {
         const itens = await collection.find().toArray()
@@ -39,7 +34,6 @@ async function main() {
 
         res.send(item)
     })
-    app.use(express.json())
 
     // Endpoint Create [Post]
     app.post('/personagem', async function (req, res) {
@@ -97,8 +91,9 @@ async function main() {
 
         res.send('Item removido com sucesso: ' + id)
     })
-
-    app.listen(3000)
+    */
+    app.listen(3000, function(){
+        console.log("Servidor rodando em http://localhost:3000")
+    })
 }
-
 main()
